@@ -1,22 +1,22 @@
 import React from 'react'
-
-function Header({text, bgcolor, textcolor}) {
-    const headerStayle = {
-        backgroundColor: bgcolor,
-        color:textcolor
+function Header({text, bgColor,textColor}) {
+    const headerStyles = {
+        backgroundColor: bgColor,
+        color: textColor,
     }
     return (
-        <header style = {headerStayle}>
+     <>
+        <header style = {headerStyles}>
             <div className = 'container'>
-                <h2>{text}</h2>
+            <h2>{text}</h2>
             </div>
         </header>
+     </>
     )
 }
-Header.defaultProps={
-text:'Feedback UI',
-bgcolor:'rgba(0,0,0,0.7)',
-textcolor:'#ff6a95'
-
+Header.defaultProps = {
+    text:'Feedback App',  
+    bgColor:'rgba(0,0,0,0.4)',
+    textColor:'#ff6a95',
 }
 export default Header
