@@ -5,12 +5,16 @@ import FeedbackData from './data/FeedbackData'
 import{useState} from 'react'
 
 function App(){
-  const [feedback, setfeedback]=useState(FeedbackData)
+  const [feedback, setFeedback]=useState(FeedbackData)
+  const feedbackDelete = (id) => {
+    if(window.confirm('Are you sure you wan to delete?'))
+   setFeedback(feedback.filter((item)=> (item.id) !== id))
+  }
 return (
   <> 
     <Header/>
     <div className = 'container'>
-     <FeedbackList feedback={feedback}/>
+     <FeedbackList feedback={feedback} handleDelete={feedbackDelete}/>
     </div>
   </>
   )
